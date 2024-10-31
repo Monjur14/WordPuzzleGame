@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Word Game</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="preload" href="/Assets/Images/GameLogo.webp" as="image">
+    <link rel="preload" href="/Assets/Images/level1.webp" as="image">
+    <link rel="preload" href="/Assets/Images/playbutton.png" as="image">
+    <link rel="preload" href="/Assets/Images/flowes.webp" as="image">
+</head>
+<body>
+    <div class="parent_div">      
+        <div class="main_div">
+            <div class="scoreBoard hidden">
+                <p class="win_score">Correct: <span class="my_win_score">0</span></p>
+                <p class="lose_score">Incorrect: <span class="my_lose_score">0</span></p>          
+            </div>
+            
+            <div class="timer-container">
+                <p id="timer" class="hidden">15s</p>
+            </div>
+
+            <!-- Screen one     -->
+            <div class="screen1 flex">
+                <img src="/Assets/Images/GameLogo.webp" alt="" class="game_logo">
+                <img src="/Assets/Images/playbutton.png" alt="" class="play_button">
+            </div>
+    
+            <!-- Screen Two  -->
+            <div class="screen2 hidden">
+                
+                <div class="level_container">
+                    <img src="/Assets/Images/level1.webp" alt="" class="level">                 
+                </div>
+                
+    
+                <div class="hidden game_main_container">
+                    <div class="input_div">
+                        <div class="win_lose_msg">
+                            <span class="hidden win_msg">Word Matched</span>
+                            <span class="hidden lose_msg">Word Didn't Matched</span>
+                        </div>
+                        <div class="answer_box">
+                            <input type="text" class="give_input animate__animated animate__fadeInDown" value="" readonly>
+                            <input type="text" class="give_input animate__animated animate__fadeInUp" value="" readonly>
+                            <input type="text" class="give_input animate__animated animate__fadeInDown" value="" readonly>
+                        </div>
+                        
+                    </div>
+
+                    
+
+                    <div class="result_container"> <!-- Result container -->
+                        <!-- Result message will appear here -->
+                    </div>
+    
+                    <!-- <div class="random_textbox_container">
+                        <div class="random_text_box">
+                            
+                        </div>
+                    </div> -->
+
+                    <!-- <span class="letter" style="transform: rotate(-12deg) translate(50px) rotate(-17deg);"></span>
+                    <span class="letter" style="transform: rotate(130deg) translate(50px) rotate(-160deg);"></span>
+                    <span class="letter" style="transform: rotate(240deg) translate(50px) rotate(-270deg);"></span> -->
+
+                    <div class="random_textbox_container1">
+                        <div class="random_text_box1">
+                            <!-- <input type="text" value="C" class="letter" style="transform: rotate(-12deg) translate(50px) rotate(-17deg);" readonly>
+                            <input type="text" value="A" class="letter" style="transform: rotate(130deg) translate(50px) rotate(-160deg);" readonly>
+                            <input type="text" value="R" class="letter" style="transform: rotate(240deg) translate(50px) rotate(-270deg);" readonly> -->
+                            
+                        </div>
+                        <img src="/Assets/Images/flowes.webp" alt="" class="flower">
+                    </div>
+                    
+    
+                    <div class="btn_container">
+                        <button class="reset_btn animate__animated animate__fadeInBottomLeft">
+                            <img src="/Assets/Images/refresh.png" alt="" width="25" class="btn_img">
+                            <span>Reset</span>
+                        </button>
+                        <!-- <button class="check_word_btn check_btn animate__animated animate__fadeInBottomRight" >
+                            <span>Check</span>
+                            <img src="/Assets/Images/right.png" alt="" width="25" class="btn_img">
+                        </button> -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Result Screen  -->
+            <div class="result_screen1 flex hidden">
+                <div class="hidden win_container">
+                    <img src="/Assets/Images/win.png" alt="" class="win_pic animate__animated animate__bounceInDown">
+                    <h4 class="win-h1">Word Matched</h4>
+                    <button class="next_btn">
+                        <span>Next</span>
+                        <img src="/Assets/Images/right.png" alt="" width="25" class="btn_img">
+                    </button>
+                </div>
+
+                <div class="hidden lose_container">
+                    <img src="/Assets/Images/lose.png" alt="" class="win_pic animate__animated animate__bounceInDown">
+                    <h4 class="lose-h1 animate__animated animate__fadeIn ">Word Didn't Matched</h4>
+                    <button class="check_word_btn try_again_btn animate__animated animate__fadeIn">
+                        <span>Try Again</span>
+                        <img src="/Assets/Images/refresh.png" alt="" width="25" class="btn_img">
+                    </button>
+                </div>
+            </div>
+
+            <div class="result_screen2 flex hidden">
+                <div class="hidden win_container2">
+                    <img src="/Assets/Images/win.png" alt="" class="win_pic animate__animated animate__bounceInDown">
+                    <h4 class="win-h1">Word Matched</h4>
+                    <button class="next_btn next_btn2">
+                        <span>Next</span>
+                        <img src="/Assets/Images/right.png" alt="" width="25" class="btn_img">
+                    </button>
+                </div>
+
+                <div class="hidden lose_container2">
+                    <img src="/Assets/Images/lose.png" alt="" class="win_pic animate__animated animate__bounceInDown">
+                    <h4 class="lose-h1 animate__animated animate__fadeIn ">Word Didn't Matched</h4>
+                    <button class="check_word_btn try_again_btn animate__animated animate__fadeIn try_again_btn2">
+                        <span>Try Again</span>
+                        <img src="/Assets/Images/refresh.png" alt="" width="25" class="btn_img">
+                    </button>
+                </div>
+            </div>
+
+            <div class="result_screen3 hidden">
+                <div class="hidden win_container3">
+                    <img src="/Assets/Images/finalWinner.webp" alt="" class="win_pic animate__animated animate__bounceInDown">
+                    <h4 class="win-h1">Word Matched</h4>
+                    <button class="next_btn next_btn2 play_again">
+                        <span>Play Again</span>
+                        <img src="/Assets/Images/refresh.png" alt="" width="25" class="btn_img">
+                    </button>
+                </div>
+
+                <div class="hidden lose_container3">
+                    <img src="/Assets/Images/lose.png" alt="" class="win_pic animate__animated animate__bounceInDown">
+                    <h4 class="lose-h1 animate__animated animate__fadeIn ">Word Didn't Matched</h4>
+                    <button class="check_word_btn try_again_btn animate__animated animate__fadeIn try_again_btn2">
+                        <span>Try Again</span>
+                        <img src="/Assets/Images/refresh.png" alt="" width="25" class="btn_img">
+                    </button>
+                </div>
+            </div>
+            <!-- Screen Three  -->
+            <div class="screen3 hidden">
+                <div class="level_container">
+                    <img src="/Assets/Images/level2.webp" alt="" class="level">                 
+                </div>
+    
+                <div class="game_main_container2 hidden">
+                    <div class="input_div">
+                        <div class="answer_box">
+                            <input type="text" class="give_input2 animate__animated animate__fadeInDown" value="" readonly>
+                            <input type="text" class="give_input2 animate__animated animate__fadeInUp" value="" readonly>
+                            <input type="text" class="give_input2 animate__animated animate__fadeInDown" value="" readonly>
+                            <input type="text" class="give_input2 animate__animated animate__fadeInUp" value="" readonly>
+                        </div>
+                    </div>
+
+                    <div class="result_container"> <!-- Result container -->
+                        <!-- Result message will appear here -->
+                    </div>
+    
+                    <div class="random_text_box2">
+                        <!-- Shuffled letters will be dynamically inserted here -->
+                    </div>
+    
+                    <div class="btn_container">
+                        <button class="reset_btn animate__animated animate__fadeInBottomLeft reset_btn2">
+                            <img src="/Assets/Images/refresh.png" alt="" width="25" class="btn_img">
+                            <span>Reset</span>
+                        </button>
+                        <button class="check_word_btn check_btn animate__animated animate__fadeInBottomRight check_btn2" >
+                            <span>Check</span>
+                            <img src="/Assets/Images/right.png" alt="" width="25" class="btn_img">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Screen four -->
+            <div class="screen4 hidden">
+                <div class="level_container">
+                    <img src="/Assets/Images/level3.webp" alt="" class="level">                 
+                </div>
+    
+                <div class="game_main_container3 hidden">
+                    <div class="input_div">
+                        <div class="answer_box">
+                            <input type="text" class="give_input3 animate__animated animate__fadeInDown" value="" readonly>
+                            <input type="text" class="give_input3 animate__animated animate__fadeInUp" value="" readonly>
+                            <input type="text" class="give_input3 animate__animated animate__fadeInDown" value="" readonly>
+                            <input type="text" class="give_input3 animate__animated animate__fadeInUp" value="" readonly>
+                            <input type="text" class="give_input3 animate__animated animate__fadeInDown" value="" readonly>
+                        </div>
+                    </div>
+
+                    <div class="result_container"> <!-- Result container -->
+                        <!-- Result message will appear here -->
+                    </div>
+    
+                    <div class="random_text_box3">
+                        <!-- Shuffled letters will be dynamically inserted here -->
+                    </div>
+    
+                    <div class="btn_container">
+                        <button class="reset_btn animate__animated animate__fadeInBottomLeft reset_btn3">
+                            <img src="/Assets/Images/refresh.png" alt="" width="25" class="btn_img">
+                            <span>Reset</span>
+                        </button>
+                        <button class="check_word_btn check_btn animate__animated animate__fadeInBottomRight check_btn3" >
+                            <span>Check</span>
+                            <img src="/Assets/Images/right.png" alt="" width="25" class="btn_img">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>

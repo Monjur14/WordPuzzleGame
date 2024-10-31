@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Word Game</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="preload" href="/Assets/Images/level2.webp" as="image">
+    <link rel="preload" href="/Assets/Images/flowes.webp" as="image">
+</head>
+<body>
+    <div class="parent_div">
+        <div class="main_div">
+            <div class="scoreBoard">
+                <p class="win_score">Correct: <span class="my_win_score">0</span></p>
+                <p class="lose_score">Incorrect: <span class="my_lose_score">0</span></p>
+            </div>
+            <div>
+                
+            </div>
+            <div class="timer-container">
+                <p id="timer" class="">20s</p>
+            </div>
+               
+            <!-- Screen Three  -->
+            <div class="screen3">
+                <div class="level_container">
+                    <img src="/Assets/Images/level2.webp" alt="" class="level">                 
+                </div>
+    
+                <div class="game_main_container2 hidden">
+                    <div class="input_div">
+                        <div class="win_lose_msg">
+                            <span class="win_msg2 hidden">Word Matched</span>
+                            <span class="lose_msg2 hidden">Word Didn't Matched</span>
+                        </div>
+                        <div class="answer_box">
+                            <input type="text" class="give_input2 animate__animated animate__fadeInDown" value="" readonly>
+                            <input type="text" class="give_input2 animate__animated animate__fadeInUp" value="" readonly>
+                            <input type="text" class="give_input2 animate__animated animate__fadeInDown" value="" readonly>
+                            <input type="text" class="give_input2 animate__animated animate__fadeInUp" value="" readonly>
+                        </div>
+                    </div>
+
+                    <div class="random_textbox_container2">
+                        <div class="random_text_box_level2">
+                            <!-- <input type="text" value="C" class="letter" style="transform: rotate(-33deg) translate(50px) rotate(5deg);" readonly>
+                            <input type="text" value="A" class="letter" style="transform: rotate(150deg) translate(50px) rotate(-180deg);" readonly>
+                            <input type="text" value="R" class="letter" style="transform: rotate(240deg) translate(50px) rotate(-270deg);" readonly>
+                            <input type="text" value="S" class="letter" style="transform: rotate(60deg) translate(50px) rotate(-90deg);" readonly> -->
+                        </div>
+                        <img src="/Assets/Images/flowes.webp" alt="" class="flower">
+                    </div>
+    
+                    <div class="btn_container">
+                        <button class="reset_btn animate__animated animate__fadeInBottomLeft reset_btn2" id="reset_xyz" onclick="reset_btn2()">
+                            <img src="/Assets/Images/refresh.png" alt="" width="25" class="btn_img">
+                            <span>Reset</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Screen four -->
+            <div class="screen4 hidden">
+                <div class="level_container">
+                    <img src="/Assets/Images/level3.webp" alt="" class="level">                 
+                </div>
+    
+                <div class="game_main_container3 hidden">
+                    <div class="input_div">
+                        <div class="answer_box">
+                            <input type="text" class="give_input3 animate__animated animate__fadeInDown" value="" readonly>
+                            <input type="text" class="give_input3 animate__animated animate__fadeInUp" value="" readonly>
+                            <input type="text" class="give_input3 animate__animated animate__fadeInDown" value="" readonly>
+                            <input type="text" class="give_input3 animate__animated animate__fadeInUp" value="" readonly>
+                            <input type="text" class="give_input3 animate__animated animate__fadeInDown" value="" readonly>
+                        </div>
+                    </div>
+
+                    <div class="result_container"> <!-- Result container -->
+                        <!-- Result message will appear here -->
+                    </div>
+    
+                    <div class="random_text_box3">
+                        <!-- Shuffled letters will be dynamically inserted here -->
+                    </div>
+    
+                    <div class="btn_container">
+                        <button class="reset_btn animate__animated animate__fadeInBottomLeft reset_btn3">
+                            <img src="/Assets/Images/refresh.png" alt="" width="25" class="btn_img">
+                            <span>Reset</span>
+                        </button>
+                        <button class="check_word_btn check_btn animate__animated animate__fadeInBottomRight check_btn3" >
+                            <span>Check</span>
+                            <img src="/Assets/Images/right.png" alt="" width="25" class="btn_img">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="level2.js"></script>
+</body>
+</html>
